@@ -12,36 +12,38 @@ def parse_radio(data: str) -> dict:
     match input_values:
         case [
             time,
-            action,
             lenses_voltage,
             lenses_amperage,
             standard_voltage,
             standard_amperage,
-            x,
-            y,
-            li_top,
-            li_bottom,
-            li_left,
-            li_right,
+            # x,
+            # y,
+            top_left,
+            bottom_left,
+            top_right,
+            bottom_right,
+            temp1,
+            temp2,
         ]:
             result = {
                 "time": time,
-                "currect_action": action,
                 "lenses_panels": {
                     "voltage": lenses_voltage,
                     "amperage": lenses_amperage,
-                    "x": x,
-                    "y": y,
+                    "x": 1,
+                    "y": 2,
+                    "temperature": temp1,
                 },
                 "standard_panels": {
                     "voltage": standard_voltage,
                     "amperage": standard_amperage,
+                    "temperature": temp2,
                 },
                 "light_intensity": {
-                    "top": li_top,
-                    "bottom": li_bottom,
-                    "left": li_left,
-                    "right": li_right,
+                    "top_left": top_left,
+                    "bottom_left": bottom_left,
+                    "top_right": top_right,
+                    "bottom_right": bottom_right,
                 },
             }
         case _:
